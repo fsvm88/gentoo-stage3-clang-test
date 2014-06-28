@@ -56,7 +56,7 @@ eselect python set --python3 1
 eselect profile set 1
 env-update && source /etc/profile
 emerge -uDN @world --quiet --keep-going
-emerge eix euses gentoolkit genlop llvm clang htop iotop iftop --quiet --keep-going -j4
+emerge eix euses gentoolkit genlop llvm clang htop iftop --quiet --keep-going -j4
 rm -Rf /portage/distfiles/* /portage/gentoo/* /portage/local_overlay/* /portage/logs/* /portage/packages/* /usr/portage/*
 
 echo -e 'FEATURES="${FEATURES} test"' >> /etc/portage/make.conf
