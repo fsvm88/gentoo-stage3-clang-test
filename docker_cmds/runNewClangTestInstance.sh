@@ -16,6 +16,6 @@ I_OVERLAY="${TMPBASE}/local_overlay"
 
 mkdir -p $I_OVERLAY $I_LOGDIR $I_TMPDIR
 
-docker run -t -i -rm -v "${PORTDIR}":/portage/gentoo -v "${DISTDIR}":/portage/distfiles -v "${I_OVERLAY}":/portage/local_overlay -v "${I_LOGDIR}":/portage/logs -v "${I_TMPDIR}":/portage/tmp fsvm88/gentoo-stage3-clang-test /bin/bash
+docker run -t -i --rm -v "${PORTDIR}":/portage/gentoo -v "${DISTDIR}":/portage/distfiles -v "${I_OVERLAY}":/portage/local_overlay -v "${I_LOGDIR}":/portage/logs -v "${I_TMPDIR}":/portage/tmp fsvm88/gentoo-stage3-clang-test /bin/bash
 
 echo "$TMPBASE will not be removed, as it may still contain useful data. Be sure to remove it once done."
