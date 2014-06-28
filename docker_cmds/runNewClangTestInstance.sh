@@ -2,9 +2,10 @@
 
 # Import some variables, if defined on host system
 # Import only sharable items (portage tree, distfiles)
-source /etc/portage/make.conf
-if [ -n "$PORTDIR" ]; then PORTDIR="/usr/portage"; fi
-if [ -n "$DISTDIR" ]; then DISTDIR="/usr/portage/distfiles"; fi
+PORTDIR=$(grep "^PORTDIR=" /etc/portage/make.conf | sed -e 's:.*=::' -e 's:"::g')
+DISTDIR=$(grep "^DISTDIR=" /etc/portage/make.conf | sed -e 's:.*=::' -e 's:"::g')
+if [ -z "${PORTDIR+set}" ]; then PORTDIR="/usr/portage"; fi
+if [ -z "${DISTDIR+set}" ]; then DISTDIR="/usr/portage/distfiles"; fi
 
 # For the rest setup temporary directories
 # I_ stands for "internal", opposed to makefile variables
