@@ -2,7 +2,7 @@
 FROM scratch 
 
 # Add the base gentoo setup
-ADD stage3-amd64-20140619.tar /
+ADD stage3-amd64-20140619.tar.xz /
 MAINTAINER Fabio Scaccabarozzi <fsvm88@gmail.com>
 
 ADD etc.tar /
