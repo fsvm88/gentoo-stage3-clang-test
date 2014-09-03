@@ -20,7 +20,7 @@ base="${name%%.*}"
 image="gentoo-temp:$base"
 container="gentoo-temp-$base"
 
-( set -x; tar cpSf etc.tar etc/ )
+tar cpSf etc.tar etc/
 
 (
 set -x;

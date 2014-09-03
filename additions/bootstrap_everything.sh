@@ -57,6 +57,10 @@ eselect profile set 1
 env-update && source /etc/profile
 emerge -uDN @world --quiet --keep-going
 emerge eix euses gentoolkit genlop llvm clang htop iftop --quiet --keep-going -j4
+sync
+
 rm -Rf /portage/distfiles/* /portage/gentoo/* /portage/local_overlay/* /portage/logs/* /portage/packages/* /usr/portage/*
+sync
 
 echo -e 'FEATURES="${FEATURES} test"' >> /etc/portage/make.conf
+sync
